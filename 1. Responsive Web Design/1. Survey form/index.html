@@ -1,0 +1,108 @@
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="index.js"></script>
+</head>
+
+<body>
+	<div id="mobile-banner" alt="only visible on mobile"></div>
+
+	<main id="content">
+		<h1 id="title">Gaming in 2020: What is trending now?</h1>
+		<p id="description">As of this year, new amazing games have popped up and old games are making their way in
+			people's hearts again. Maybe you have some insightful views you might want to share with us, if so, please
+			take your time to complete this survey about this year's most popular games.</p>
+
+		<form id="survey-form">
+			<div id="small-text-fields">
+				<label for="name" id="name-label">
+					Nickname<span class="star">*</span>
+				</label>
+				<div id="name-field">
+					<input id="name" name="name" type="text" required placeholder="The name you use on games" />
+				</div>
+
+				<label for="email" id="email-label">
+					Email<span class="star">*</span>
+				</label>
+				<div id="email-field">
+					<input id="email" name="email" type="email" required placeholder="youraddress@yourprovider.com" />
+				</div>
+
+				<label for="number" id="number-label">Age</label>
+				<div id="age-field">
+					<input id="number" name="age" type="number" required placeholder="1 - 100" min="1" max="100" />
+				</div>
+			</div>
+
+			<div id="gender-field">
+				<label id="gender-label">Gender</label>
+				
+				<div id="gender-wrapper">
+					<div class="option-wrapper">
+						<label class="gender-radio-label" for="male">Male </label>
+						<input id="male" value="male" name="gender" type="radio" />
+					</div>
+					<div class="option-wrapper">
+						<label class="gender-radio-label" for="female">Female </label>
+						<input id="female" value="female" name="gender" type="radio" />
+					</div>
+					<div class="option-wrapper">
+						<label class="gender-radio-label" for="other">Other </label>
+						<input id="other" value="other" name="gender" type="radio" />
+					</div>
+				</div>
+			</div>
+
+			<div id="dropdown-field">
+				<label for="dropdown">Choose the game you like the most</label>
+				<select id="dropdown" name="dropdown">
+					<option value="league-of-legends">League of Legends</option>
+					<option value="rainbow-six">Tom Clancy's Rainbow Six: Siege</option>
+					<option value="csgo">Counter Strike: Global Offensive</option>
+					<option value="minecraft">Minecraft</option>
+					<option value="cod-mw">Call of Duty: Modern Warfare</option>
+					<option value="valorant">Valorant</option>
+					<option value="overwatch">Overwatch</option>
+					<option value="hearthstone">Hearthstone</option>
+					<option value="gta5">Grand Theft Auto V</option>
+				</select>
+			</div>
+
+			<div id="genre-field">
+				<label>Choose your favorite game genres</label>
+				<br /><br />
+
+				<div id="genre-group">
+					<input id="platform" name="platform" value="platform" type="checkbox" />
+					<label for="platform">Platform</label><br />
+					
+					<input id="shooter" name="shooter" value="shooter" type="checkbox" />
+					<label for="shooter">Shooter</label><br />
+					
+					<input id="fighting" name="fighting" value="fighting" type="checkbox" />
+					<label for="fighting">Fighting</label><br />
+					
+					<input id="survival" name="survival" value="survival" type="checkbox" />
+					<label for="survival">Survival</label><br />
+					
+					<input id="battle-royale" name="battle-royale" value="battle-royale" type="checkbox" />
+					<label for="battle-royale">Battle Royale</label>
+				</div>
+			</div>
+
+			<div id="commentary-field">
+				<label for="commentary">What is your opinion on gaming this year?</label><br /><br />
+				<textarea id="commentary" name="commentary" spellcheck="false"></textarea>
+			</div>
+
+			<input id="submit" type="submit">
+		</form>
+	</main>
+</body>
+
+</html>

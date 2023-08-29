@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="index.js"></script>
+</head>
+
+<body>
+	<nav id="navbar">
+		<div id="links">
+			<a class="navlink" href="#welcome-section">About me</a>
+			<a class="navlink" href="#projects">Projects</a>
+			<a class="navlink" href="#contacts">Contact information</a>
+		</div>
+	</nav>
+	<main id="sections">
+		<section id="welcome-section">
+			<header id="title-container">
+				<h1 id="title">Liviu Cocianu</h1>
+				<h2 id="subtitle">Front End Web Developer</h2>
+			</header>
+			<div id="info-card">
+				<h2 id="info">Entry level front end web developer with 2+ years of experience in designing and
+					developing
+					functional user interfaces, using various visual frameworks and libraries.</h2>
+			</div>
+		</section>
+		<section id="projects">
+			<div id="project-selector">
+				<div id="categories">
+					<div id="project-header">Project categories</div>
+					<div id="categories-links">
+						<a id="vanilla-link" href="#vanilla">
+							Plain webpages
+						</a>
+						<a id="react-link" href="#react">
+							React.js applications
+						</a>
+					</div>
+				</div>
+				<div id="thumbnails">
+					<div class="category" id="vanilla">
+						<div class="category-header">Plain webpages</div>
+						<div class="category-t">
+							<div class="project-tile">
+								<div class="tile-image" id="tribute"></div>
+								<div class="tile-label">Tribute page</div>
+							</div>
+							<div class="project-tile">
+								<div class="tile-image" id="landing"></div>
+								<div class="tile-label">Landing page</div>
+							</div>
+							<div class="project-tile">
+								<div class="tile-image" id="survey"></div>
+								<div class="tile-label">Survey form</div>
+							</div>
+							<div class="project-tile">
+								<div class="tile-image" id="doc"></div>
+								<div class="tile-label">Technical page</div>
+							</div>
+						</div>
+					</div>
+					<br /><br />
+					<div class="category" id="react">
+						<div class="category-header">React.js applications</div>
+						<div class="category-t">
+							<div class="project-tile">
+								<div class="tile-image" id="quote"></div>
+								<div class="tile-label">Quote machine</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="contacts">
+			<div id="contacts-card">
+				<div id="contacts-front">
+					<h1 id="contacts-title">Contact me</h1>
+					<h2 id="contacts-subtitle">toggle details by clicking here</h2>
+				</div>
+			</div>
+			<div id="contacts-back">
+				<div id="github-link" class="contact-link">
+					<i class="fa fa-github"></i>&nbsp;&nbsp;
+					Github:&nbsp;<a id="profile-link" href="https://github.com/LiviuCocianu" target="_blank"> [ click here
+						]</a>
+				</div>
+				<div id="linkedin-link" class="contact-link">
+					<i class="fa fa-linkedin"></i>&nbsp;&nbsp;
+					Linkedin:&nbsp;<a href="https://www.linkedin.com/in/liviu-cocianu" target="_blank"> [
+						click
+						here ]</a>
+				</div>
+				<div id="email-address" class="contact-link">
+					<i class="fa fa-envelope-o"></i>&nbsp;&nbsp;
+					Email:&nbsp;<span class="thin">liviucocianu@gmail.com</span>
+				</div>
+			</div>
+		</section>
+	</main>
+</body>
+
+</html>

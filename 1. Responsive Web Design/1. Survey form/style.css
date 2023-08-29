@@ -1,0 +1,276 @@
+body {
+  transition: background-image 3s;
+  margin: 0;
+  background-image: url("https://images7.alphacoders.com/536/thumb-1920-536426.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  font-family: arial, sans-serif;
+}
+
+#mobile-banner {
+  width: 100%;
+  height: 30vh;
+  display: none;
+  background-image: url("https://images7.alphacoders.com/536/thumb-1920-536426.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
+}
+
+#content {
+  background-color: rgba(234, 234, 234, 1);
+  padding: 2em;
+  min-width: 700px;
+  width: 60%;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0px -3px 30px 0.5px darkgray;
+}
+
+#title {
+  text-align: center;
+}
+
+#description {
+  text-align: justify;
+  width: 90%;
+  margin: 0 auto;
+}
+
+#survey-form {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 4em;
+  display: grid;
+  grid-template-rows: repeat(8, auto);
+  grid-row-gap: 0.5em;
+  flex-direction: column;
+  font-family: Calibri;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 3em;
+}
+
+.star {
+  color: red;
+  font-weight: bold;
+}
+
+input[type="text"], input[type="email"] {
+  width: 80%;
+  border-radius: 2px;
+  border: 1px solid black;
+  padding: 0.5em;
+  margin-left: 1em;
+}
+
+#small-text-fields {
+  display: grid;
+  grid-template-columns: 10em auto;
+  grid-template-rows: 2em 2em 2em;
+}
+
+#gender-field {
+  margin: 1em 0;
+  display: grid;
+  grid-template-columns: 4em auto;
+  grid-column-gap: 0.8em;
+  align-items: center;
+}
+
+#gender-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 4.5em);
+  justify-content: center;
+  grid-column-gap: 0.8em;
+  border: 1px solid black;
+  width: auto;
+  padding: 0.5em 0;
+}
+
+.option-wrapper {
+  justify-self: center;
+}
+
+.option-wrapper input[type="radio"] {
+  margin: 0;
+  transform: translateY(0.1em);
+}
+
+#number {
+  width: 20%;
+  border-radius: 2px;
+  border: 1px solid black;
+  padding: 0.5em;
+  margin-left: 1em;
+}
+
+#dropdown-field,
+#genre-field,
+#commentary-field {
+  margin: 1em 0;
+}
+
+#dropdown-field {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+}
+
+#dropdown {
+  padding: 0.5em;
+}
+
+#commentary {
+  width: 100%;
+  height: 5em;
+  resize: vertical;
+  font-family: arial;
+  padding: 1em;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+#submit {
+  height: 3em;
+  background-color: dodgerblue;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    transition: none;
+    background-image: none;
+    word-wrap: break-word;
+  }
+
+  #content {
+    min-width: inherit;
+    max-width: inherit;
+    width: inherit;
+    box-shadow: 0px -10px 15px 20px #EAEAEA;
+  }
+
+  #title {
+    width: 90%;
+    font-size: 1.2em;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    padding: 0;
+  }
+
+  #description {
+    width: 90%;
+    font-size: 0.8em;
+    margin: 0;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  #survey-form {
+    width: 80%;
+    margin: 4em auto;
+    font-size: 0.5em;
+  }
+
+  label {
+    font-size: 1.5em;
+  }
+
+  input[type="text"], input[type="email"] {
+    width: 80%;
+    border-radius: 2px;
+    border: 1px solid black;
+    padding: 0.5em;
+    margin-left: 1em;
+  }
+
+  ::-webkit-input-placeholder {
+    font-size: 0.8em;
+  }
+
+  #small-text-fields {
+    grid-template-columns: 7em auto;
+    grid-template-rows: 4em 4em 4em;
+  }
+
+  #small-text-fields input {
+    height: 1.5em;
+    width: 90%;
+  }
+
+  #gender-field {
+    grid-template-columns: 5em auto;
+  }
+
+  #gender-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 5em);
+    justify-content: center;
+    font-size: 1.3em;
+    border: 1px solid black;
+    width: auto;
+    padding: 0.5em 0;
+  }
+
+  .gender-radio-label {
+    font-size: 1.2em;
+  }
+
+  .option-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 0.4em;
+    align-items: center;
+  }
+
+  input[name="gender"] {
+    width: 0.7em;
+    padding-left: 1em;
+    transform: translateY(0.3em);
+  }
+
+  #dropdown-field,
+  #genre-field,
+  #commentary-field {
+    margin: 1.5em 0;
+  }
+
+  #dropdown-field {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-row-gap: 0.8em;
+    align-items: center;
+  }
+
+  #dropdown {
+    padding: 0.3em;
+    font-size: 1.5em;
+    background-color: white;
+  }
+  
+  #dropdown:hover {
+    outline: none;
+  }
+  
+  #commentary {
+    padding: 1em;
+    font-size: 1em;
+  }
+  
+  input[type="submit"] {
+    background-color: white;
+    padding: 0.5em;
+    border: 1px solid gray;
+    border-radius: 2px;
+  }
+}

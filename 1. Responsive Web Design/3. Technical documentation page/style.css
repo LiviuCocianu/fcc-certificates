@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  height: 100vh;
+  font-family: "Montserrat", arial;
+}
+
+::-webkit-scrollbar {
+  background-color: #575151;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3f3b3b;
+  border: 3px solid #575151;
+}
+
+a {
+  transition: color 500ms;
+  color: #be6a15;
+}
+
+a:hover {
+  color: #feb062;
+}
+
+#navbar {
+  width: auto;
+  background-color: #575151;
+  color: #f5f5f5;
+  min-width: 250px;
+  display: grid;
+  grid-template-rows: 10% 90%;
+  z-index: 2;
+  /*overflow-y: scroll;*/
+}
+
+#nav-header {
+  background-color: #3f3b3b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#links {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(3em, auto));
+}
+
+.nav-link {
+  transition: background-color 500ms, color 500ms;
+  padding: 1em 1.5em;
+  font-size: 0.9em;
+  border-bottom: 1px solid #3f3b3b;
+}
+
+.nav-link:link, .nav-link:visited {
+  text-decoration: none;
+  color: #f5f5f5;
+}
+
+.nav-link:hover {
+  background-color: #feb062;
+  color: #3f3b3b;
+}
+
+#main-doc {
+  background-color: #f5f5f5;
+  min-width: 500px;
+  padding: 2em 1em;
+  z-index: 1;
+  overflow-y: scroll;
+}
+
+.main-section {
+  padding: 3em;
+}
+
+.section-header {
+  color: #3f3b3b;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+li {
+  margin: 0.5em 0;
+}
+
+code div, code pre {
+  background-color: #3f3b3b;
+  color: white;
+  padding: 1em 2em;
+  margin: 4em 0;
+  border-radius: 2px;
+}
+
+.comment {
+  color: gray;
+}
+
+.c {
+  padding: 0 0.3em;
+  font-size: 1.1em;
+  background-color: rgba(254, 176, 98, 0.5);
+  border-radius: 10%;
+}
+
+@media (max-width: 780px) {
+  body {
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 8fr;
+  }
+  
+  #navbar {
+    width: 100vw;
+    height: 35vh;
+    grid-template-rows: 30% 70%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+  }
+  
+  .nav-link:hover {
+    background-color: transparent;
+    color: white;
+  }
+  
+  #links {
+    font-size: 0.9em;
+    grid-template-rows: repeat(auto-fill, minmax(2.5em, auto));
+    overflow: scroll;
+  }
+  
+  .main-section {
+    padding: 2em;
+    position: relative;
+    top: 35vh;
+    left: 0;
+  }
+  
+  #main-doc {
+    min-width: 100vw;
+    width: 100vw;
+    padding: 0;
+    overflow: initial;
+  }
+  
+  #main-doc p {
+    font-size: 0.8em;
+    margin-block-start: 1.5em;
+    margin-block-end: 1.5em;
+  }
+  
+  code div, code pre {
+    overflow: scroll;
+  }
+  
+  code div, code pre, li {
+    font-size: 0.8em;
+  }
+}

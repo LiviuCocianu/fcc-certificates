@@ -1,0 +1,160 @@
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="style.css" />
+	<script src="index.js"></script>
+</head>
+
+<body>
+	<nav id="navbar">
+		<header id="nav-header">Minecraft Commands.<br /> Basic Documentation</header>
+		<div id="links">
+			<a class="nav-link" href="#Introduction">Introduction</a>
+			<a class="nav-link" href="#What_are_'datapacks'?">What are 'datapacks'?</a>
+			<a class="nav-link" href="#Target_selectors">Target selectors</a>
+			<a class="nav-link" href="#What_you_should_avoid_doing">What you should avoid doing</a>
+			<a class="nav-link" href="#The_/scoreboard_command">The /scoreboard command</a>
+			<a class="nav-link" href="#The_/execute_command">The /execute command</a>
+		</div>
+	</nav>
+	
+	<main id="main-doc">
+		<section class="main-section" id="Introduction">
+			<header class="section-header">Introduction</header>
+			<p>Minecraft is a game about bringing the most out of your creativity. Moreover, creativity in this game can be
+				understood from different perspectives: building, PvP, redstone engineering, and at the end of the list we
+				have what I like to call "command block programmers" or "function programmers" as of now.</p>
+			<p>With this out of the way, we are going to dive into the basics of Minecraft commands and how many impressive
+				things you can do with them when used together correctly. There are many more commands that are being used
+				less in contraptions, so this page will at least help you not only get into the principles of this
+				pseudo-programming language, but what commands you can use to lay your foundation with.</p>
+		</section>
+		<section class="main-section" id="What_are_'datapacks'?">
+			<header class="section-header">What are 'datapacks'?</header>
+			<p>Datapacks are a more recent addition (first added in the 1.13 version of the game) that allow players to
+				further customize their experience within the game. A datapack takes the form of a folder that inhabits
+				special text files that use the .mcfunction extension.</p>
+			<p>More briefly, a datapack is a bundle of <u>functions</u> that can be executed based on how you configure it.
+				Functions are, simply put, text files that contain one command per line. Here is an example of how a
+				.mcfunction file usually looks like:</p>
+			<code>
+	      <div>
+	        teleport @s ~ ~5 ~<br/>
+	        setblock ~ ~-1 ~ emerald_block<br/>
+	        execute at @s run setblock ~ ~-1 ~ diamond_block<br/>
+	      </div>
+	    </code>
+			<p>Files within a datapack must have a certain structure:</p>
+			<code>
+	      <pre>
+	(data pack name)
+	    pack.mcmeta
+	    data
+	        (namespace)
+	            functions
+	                (function).mcfunction
+	            tags
+	                functions
+	                    (tag).json
+	      </pre>
+	    </code>
+		</section>
+		<section class="main-section" id="Target_selectors">
+			<header class="section-header">Target selectors</header>
+			<p>Now that you know how minecraft command programmers (MCPs for short) bundle their commands in an organized,
+				up to date manner, it's time we dive into a well-used parameter: target selectors. </p>
+			<p>Target selectors allow you to refer the command you use to one entity (players, mobs, items, etc.) or a group
+				of entities. As of writing this documentation, there are 5 types of target selectors:</p>
+			<ul>
+				<li>@p - Target the nearest player relative to the location of the command executor. Only works on player
+					entities</li>
+				<li>@r - Targets a random player. Only works on player entities as well</li>
+				<li>@a - Targets all players that are online at the moment of execution. Like the previous two, only works
+					for player entities</li>
+				<li>@s - Targets the entity that executed the command.</li>
+				<li>@e - Targets everything that is considered an entity. <a
+						href="https://www.digminecraft.com/lists/entity_list_pc.php" target="_blank">See the list of all
+						entities in Minecraft</a></li>
+			</ul>
+			<p>What makes target selectors so used, though, is that you can provide additiona arguments to them, making the
+				selection more accurate. Arguments like <code class="c">type</code>, <code class="c">tag</code> or <code
+					class="c">nbt</code> are used the most by mapmakers to query targets with specific, desired states. Here
+				is an example of a command that uses target selector arguments to teleport all creepers to the command
+				executor:</p>
+			<code>
+	      <div>
+	        tp @e[type=creeper] @s<br/>
+	      </div>
+	    </code>
+			<p><a href="https://minecraft.gamepedia.com/Commands#Target_selector_variables" target="_blank">See the
+					wikipedia page for an in-depth look at target arguments</a></p>
+		</section>
+		<section class="main-section" id="What_you_should_avoid_doing">
+			<header class="section-header">What you should avoid doing</header>
+			<p>Using these commands can be fun, but using them irresponsibly might as well impact your minecraft world
+				negatively the same they can positively.</p>
+			<p>Here are some measures you should have in mind when creating a datapack for your world:</p>
+			<ul>
+				<li>Make sure you refer to a small volume of entites. For example, using just one or no arguments with @e
+					will increase the running time, as @e selects ALL entities and there is a big chance your world is
+					inhabited by lots of them</li>
+				<li>The order of your target selector arguments slightly affect the execution time. Certain arguments have a
+					slightly bigger intensivity, like <code class="">type</code>, so when you use selectors, be as specific
+					as you can</li>
+				<li>Use the <code class="c">nbt</code> argument mindfully. This argument queries the NBT of an entity,
+					therefore it can affect run time. Try replacing this argument with <a
+						href="https://minecraft.gamepedia.com/Predicate" target="_blank">predicates</a> when possible.</li>
+			</ul>
+		</section>
+		<section class="main-section" id="The_/scoreboard_command">
+			<header class="section-header">The /scoreboard command</header>
+			<p>The <code class="c">/scoreboard</code> command is meant for creating, you guessed it, scoreboards!
+				Scoreboards can display different statistics in your world or store numerical values, on the middle-right
+				side of your screen.</p>
+			<p>"How is this command useful to a mapmaker?" you might ask? As mentioned, scoreboards are generally used as
+				variable storers. Minecraft was never meant to be a programming environment, but the quick-witted people of
+				the community gave scoreboards a significant purpose in their projects.</p>
+			<p>This command comes with many parameters, such as <code class="c">objective</code> for managing the
+				scoreboards themselves, or <code class="c">players</code> for managing the content of scoreboards, such as
+				player scores. An interesting application mapmakers have, that not many know about, is that scoreboards
+				accept "fake" players as well, thing that opens the possibility of having constants or variables to work
+				with. Here is an example of how to create one:</p>
+			<code>
+	      <pre>
+	<span class="comment"># This command creates a scoreboard called "variables"</span>
+	scoreboard objectives add variables dummy
+	<span class="comment"># And this one creates a fake player named "cookiesEaten" by adding a hashtag before the name and assigning it with the number 6</span>
+	<span class="comment"># !! Only integers are accepted !!</span>
+	scoreboard players set #cookiesEaten variables 6
+	      </pre>
+	    </code>
+			<p><a href="https://minecraft.gamepedia.com/Scoreboard" target="_blank">See the wikipedia page for an in-depth
+					look at scoreboards</a></p>
+		</section>
+		<section class="main-section" id="The_/execute_command">
+			<header class="section-header">The /execute command</header>
+			<p>Finally, this command, in my opinion, is a must-have in any datapack you create. Without it, not many
+				astonishing things can be created, it is THAT important! The <code class="c">/execute</code> command's inner
+				workings are so complicated that explaining everything here would be too lenghty.</p>
+			<p>The official minecraft wikipedia page describes <code class="c">/execute</code> as a <i>"versatile command
+					that modifies variables or procedures in the execution of another command."</i>. What it means is that
+				you can take a command and execute it, for example, from another entity's perspective (location, the
+				direction it's facing, etc). What makes it such a golden command is the fact that it can used in conjunction
+				with target selectors, which allows for precise selection and versatility, just how the wikipedia page
+				describes it as.</p>
+			<p>Here is an example of how you can pull a devious prank on your friends with the <code
+					class="c">/execute</code> command:</p>
+			<code>
+	      <pre>
+	<span class="comment"># Summons a creeper that will explode instantly relative to all players except you</span>
+	execute as @a[distance=1..] at @s run summon creeper ~ ~ ~ {Fuse:1}
+	      </pre>
+	    </code>
+			<p>This command has many parameters that allows for full control over the execution. <a
+					href="https://minecraft.gamepedia.com/Commands/execute" target="_blank">Check the rest of the wikipedia
+					article for all the capabilities</a></p>
+		</section>
+	</main>
+</html>

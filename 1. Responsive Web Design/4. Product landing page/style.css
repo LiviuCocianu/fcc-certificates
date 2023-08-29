@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #0e153a;
+  font-family: "Montserrat", arial
+}
+
+#cover {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://external-preview.redd.it/xYsxrtmn12Qik1sTYMRP-p-osfDTZ2wT_fur_bf6zOI.jpg?width=960&crop=smart&auto=webp&s=a6ababedcc37182236c07398c7fe0deb1030b4f2");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px) brightness(50%);
+  -webkit-filter: blur(6px) brightness(50%);
+}
+
+#cover-overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+#logo {
+  position: fixed;
+  top: 1em;
+  left: 0;
+  width: 12vw;
+  z-index: 100;
+}
+
+#nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  background-color: transparent;
+  
+  display: grid;
+  grid-template-columns: repeat(3, auto) 2%;
+  grid-template-areas: "about demo pricing .";
+  grid-column-gap: 3em;
+  justify-content: end;
+  align-items: center;
+  z-index: 100;
+}
+
+#about-link {
+  grid-area: "about";
+}
+
+#demo-link {
+  grid-area: "demo";
+}
+
+#pricing-link {
+  grid-area: "pricing";
+}
+
+.nav-link {
+  justify-self: center;
+}
+
+a:link, a:visited, a:active {
+  text-decoration: none;
+  color: #e2f3f5;
+}
+
+h1 {
+  font-weight: black;
+  margin-block-start: 0;
+  margin-block-end: 0.3em;
+  color: white;
+  font-size: 2.5em;
+}
+
+h2 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-weight: 300;
+  color: #e2f3f5;
+}
+
+#form {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-column-gap: 1em;
+  margin-top: 2em;
+  border: 1px solid rgba(226, 243, 245, 0.2);
+  padding: 1.5em;
+}
+
+#email-field {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 1em;
+  align-items: center;
+}
+
+#email-field label {
+  color: #e2f3f5;
+}
+
+#email-field input {
+  font-family: "Montserrat", arial;
+  width: 15em;
+  background-color: transparent;
+  border: 1px solid #e2f3f5;
+  color: #e2f3f5;
+  padding: 0.5em;
+}
+
+#email-field input::-webkit-input-placeholder {
+  font-family: "Montserrat", arial;
+  color: #e2f3f5;
+}
+
+#email-field input:focus {
+  outline: #e2f3f5;
+}
+
+#submit {
+  transition: background-color 500ms, color 500ms;
+  font-family: "Montserrat", arial;
+  padding: 0.5em 0.8em;
+  background-color: transparent;
+  border: 1px solid #e2f3f5;
+  outline: none;
+  color: #e2f3f5;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: #e2f3f5;
+  color: #3d5af1;
+}
+
+#content {
+  position: relative;
+  background-color: #0e153a;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+section {
+  padding-top: 6em;
+  padding-bottom: 6em;
+  margin: 0 auto;
+  width: 80%;
+}
+
+#about {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+}
+
+#about div {
+  padding: 0 2em;
+}
+
+h3 {
+  color: #22d1ee;
+}
+
+p {
+  color: #e2f3f5;
+}
+
+.icon {
+  width: 10vw;
+  justify-self: center;
+}
+
+#demonstration {
+  display: flex;
+  justify-content: center;
+}
+
+#video {
+  box-shadow: 1px 1px 20px 5px white;
+}
+
+#pricing {
+  margin-top: 6em;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-column-gap: 3em;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 15vw;
+  height: auto;
+  background-color: #e2f3f5;
+  padding: 3em;
+  border-radius: 10%;
+  display: grid;
+  grid-template-rows: 1em 1em 15em auto;
+  grid-row-gap: 1em;
+}
+
+.card h3, .card h4 {
+  text-align: center;
+}
+
+.card h3 {
+  color: #3d5af1;
+}
+
+.card h4 {
+  color: #22d1ee;
+}
+
+.card p {
+  color: #0e153a;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin: 2em 0;
+  text-align: justify;
+}
+
+.listing {
+  margin-top: 2em;
+  font-size: 0.8em;
+}
+
+.button {
+  transition: background-color 500ms, color 500ms;
+  height: 3em;
+  font-family: "Montserrat", arial;
+  padding: 0.5em 0.8em;
+  background-color: transparent;
+  border: 1px solid #3d5af1;
+  outline: none;
+  color: #3d5af1;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #3d5af1;
+  color: #e2f3f5;
+}
+
+#footer {
+  width: 100%;
+  height: 15vh;
+  color: #e2f3f5;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  background-color: #090e29;
+  display: grid;
+  grid-template-rows: 2em 2em;
+  grid-template-areas: "links ." "copyright .";
+  grid-column-gap: 4em;
+  justify-content: end;
+  align-content: center;
+  font-size: 0.8em;
+}
+
+#footer p {
+  grid-area: copyright;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+#footer-links {
+  grid-area: links;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  grid-column-gap: 1em;
+}
+
+@media (max-width: 780px) {
+  #cover {
+    height: 50vh;
+  }
+
+  #cover-overlay {
+    top: 20vh;
+    left: 0;
+    height: 25vh;
+  }
+  
+  h1 {
+    font-size: 1.2em;
+  }
+  
+  h2 {
+    font-size: 0.8em;
+  }
+  
+  #form {
+    grid-column-gap: 2em;
+    margin-top: 1em;
+    padding: 1em;
+    font-size: 0.8em;
+    width: 80%;
+  }
+  
+  #email-field input {
+    width: 100%;
+  }
+  
+  #email-field input::-webkit-input-placeholder {
+    font-size: 0.8em;
+  }
+  
+  #submit {
+    font-size: 0.8em;
+    width: 100%;
+  }
+  
+  #logo {
+    width: 12em;
+    transform: translate(-50%, 20%);
+    left: 50%;
+  }
+  
+  #nav-bar {
+    grid-template-columns: repeat(3, auto);
+    grid-template-areas: "about demo pricing";
+    top: 4.5em;
+    left: 50%;
+    transform: translateX(-60%);
+    grid-column-gap: 2em;
+  }
+  
+  .nav-link {
+    font-size: 0.8em;
+  }
+  
+  section {
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+  
+  #about div {
+    padding: 0;
+  }
+  
+  h3 {
+    font-size: 0.8em;
+  }
+  
+  p {
+    font-size: 0.7em;
+  }
+  
+  #video {
+    width: 100%;
+    height: 50%;
+  }
+  
+  #pricing {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, auto);
+    justify-items: center;
+  }
+  
+  .card {
+    width: 60%;
+    height: auto;
+    padding: 2em;
+    margin: 1em;
+    background-color: #e2f3f5;
+    border-radius: 10%;
+    grid-template-rows: repeat(4, auto);
+  }
+  
+  .card h3, .card h4 {
+    margin: 0;
+  }
+
+  .card h3 {
+    color: #3d5af1;
+  }
+
+  .card h4 {
+    color: #22d1ee;
+  }
+
+  .card p {
+    color: #0e153a;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin: 2em 0;
+    text-align: justify;
+  }
+
+  .listing {
+    margin-top: 2em;
+    font-size: 0.8em;
+  }
+  
+  #footer {
+    justify-content: center;
+    grid-template-areas: "links" "copyright";
+  }
+  
+  #footer-links {
+    justify-content: center;
+    grid-column-gap: 2em;
+  }
+  
+  #footer p {
+    justify-self: center;
+  }
+}
